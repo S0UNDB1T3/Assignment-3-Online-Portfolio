@@ -372,13 +372,29 @@
     .photo-placeholder {
       aspect-ratio: 1 / 1.18;
       border-radius: 24px;
-      border: 1px dashed rgba(255,255,255,0.38);
+      border: 1px solid rgba(255,255,255,0.28);
       display: grid;
       place-items: center;
       text-align: center;
-      padding: 24px;
+      padding: 0;
       color: var(--muted);
       background: linear-gradient(135deg, rgba(94,200,255,0.14), rgba(255,106,42,0.12)), rgba(255,255,255,0.04);
+      overflow: hidden;
+    }
+
+    .artist-photo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      border-radius: 24px;
+      filter: contrast(1.04) saturate(1.05);
+      transition: transform 0.35s ease, filter 0.35s ease;
+    }
+
+    .photo-placeholder:hover .artist-photo {
+      transform: scale(1.04);
+      filter: contrast(1.08) saturate(1.12) brightness(1.05);
     }
 
     .service-grid, .gallery-grid, .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px; }
@@ -590,7 +606,11 @@
 
     <section id="bio" class="scroll-section from-left">
       <div class="split">
-        <div class="glass-card reveal"><div class="photo-placeholder.png">Replace this box with your artist photo.<br /><br />Use a clean portrait with good lighting.</div></div>
+        <div class="glass-card reveal">
+          <div class="photo-placeholder">
+            <img class="artist-photo" src="images/photo-placeholder.png" alt="Artist photo of Richard Rojas" />
+          </div>
+        </div>
         <div class="glass-card reveal delay-1">
           <h2 class="section-title">Bio <span>/</span></h2>
           <p>Richard Rojas is a Digital Media Art student at San José State University whose work moves between 3D animation, 2D animation, graphic design, UI/UX design, motion graphics, video, and experimental technology. His practice is shaped by digital culture, music, lighting, character-driven visuals, and the feeling of entering a space that feels both futuristic and personal.</p>
@@ -651,11 +671,11 @@
       <h2 class="section-title reveal">Contact <span>/</span></h2>
       <div class="contact-layout stagger-wrap">
         <div class="contact-mini-grid">
-          <a class="glass-card contact-card reveal delay-1" href="mailto:SB.S0UNDB1T3@GMAIL"><strong>Email</strong><p>SB.S0UNDB1T3@GMAIL</p></a>
+          <a class="glass-card contact-card reveal delay-1" href="mailto:SB.S0UNDB1T3@gmail.com"><strong>Email</strong><p>SB.S0UNDB1T3@gmail.com</p></a>
           <a class="glass-card contact-card reveal delay-2" href="https://linktr.ee/s0undb1t3" target="_blank"><strong>Linktree (All of my Social Links and Forms of Digital Media!)</strong><p>linktr.ee/s0undb1t3</p></a>
           <a class="glass-card contact-card reveal delay-3" href="https://www.instagram.com/s0undb1t3" target="_blank"><strong>Instagram and My Most active of Social Media Accounts! DM me! </strong><p>@S0UNDB1T3</p></a>
         </div>
-        <form class="glass-card glow-border contact-form reveal delay-2" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        <form class="glass-card glow-border contact-form reveal delay-2" action="mailto:SB.S0UNDB1T3@gmail.com" method="post" enctype="text/plain">
           <div><h3 style="font-family: 'Michroma', sans-serif; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;">Send a Message</h3><p class="form-note">Use this form for commissions, collaborations, portfolio questions, or project inquiries. When submitted, it opens the visitor’s email app with the message ready to send.</p></div>
           <div class="form-row"><div class="field"><label for="name">Name</label><input id="name" name="Name" type="text" placeholder="Your name" required /></div><div class="field"><label for="email">Email</label><input id="email" name="Email" type="email" placeholder="your@email.com" required /></div></div>
           <div class="field"><label for="subject">Subject</label><input id="subject" name="Subject" type="text" placeholder="Project / commission / collaboration" required /></div>
