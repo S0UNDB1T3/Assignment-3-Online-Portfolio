@@ -9,8 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
   <style>
     :root {
       --bg: #030405;
@@ -20,7 +18,6 @@
       --white: #f8fbff;
       --text: #f8fbff;
       --muted: #b9c5d3;
-      --glass: rgba(255, 255, 255, 0.08);
       --line: rgba(255, 255, 255, 0.18);
       --shadow: 0 0 40px rgba(94, 200, 255, 0.22);
     }
@@ -76,10 +73,6 @@
       text-decoration: none;
     }
 
-    code {
-      color: var(--blue);
-    }
-
     .cursor-glow {
       position: fixed;
       width: 260px;
@@ -101,15 +94,6 @@
       opacity: 0.18;
       scale: 0.58;
       filter: blur(18px);
-    }
-
-    .cursor-glow::after {
-      content: "";
-      position: absolute;
-      inset: 34%;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.42);
-      box-shadow: 0 0 22px rgba(255,255,255,0.65), 0 0 42px rgba(94,200,255,0.35), 0 0 64px rgba(255,106,42,0.25);
     }
 
     @keyframes cursorStarSpin {
@@ -198,8 +182,7 @@
       transition: 0.3s ease;
     }
 
-    .logo-badge img,
-    .hero-logo-img {
+    .logo-badge img {
       width: 76%;
       height: auto;
       object-fit: contain;
@@ -294,7 +277,6 @@
       letter-spacing: -0.04em;
       margin-bottom: 24px;
       text-shadow: 0 0 14px rgba(255,255,255,0.10), 0 0 20px rgba(94,200,255,0.18), 0 0 30px rgba(255,106,42,0.14);
-      transition: transform 0.6s ease, opacity 0.6s ease;
     }
 
     .section-title span {
@@ -311,7 +293,7 @@
       backdrop-filter: blur(18px);
       position: relative;
       overflow: hidden;
-      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease, filter 0.35s ease;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, border-color 0.35s ease;
     }
 
     .glass-card {
@@ -555,23 +537,10 @@
       background: rgba(3,4,5,0.68);
     }
 
-    .reveal,
-    .reveal-on-scroll {
+    .reveal {
       opacity: 0;
       transform: translateY(28px);
-    }
-
-    .reveal {
       animation: reveal 0.8s ease forwards;
-    }
-
-    .reveal-on-scroll {
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal-on-scroll.active {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .delay-1 {
@@ -603,38 +572,6 @@
     .scroll-section.in-view {
       opacity: 1;
       transform: translateY(0) scale(1);
-    }
-
-    .from-bottom {
-      transform: translateY(90px) scale(0.96);
-    }
-
-    .scroll-section.in-view.from-bottom {
-      transform: translateX(0) translateY(0) scale(1);
-    }
-
-    .stagger-wrap > * {
-      opacity: 0;
-      transform: translateY(28px) scale(0.97);
-      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .scroll-section.in-view .stagger-wrap > *:nth-child(1) {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      transition-delay: 0.08s;
-    }
-
-    .scroll-section.in-view .stagger-wrap > *:nth-child(2) {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      transition-delay: 0.16s;
-    }
-
-    .scroll-section.in-view .stagger-wrap > *:nth-child(3) {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      transition-delay: 0.24s;
     }
 
     @media (max-width: 1180px) {
@@ -773,7 +710,7 @@ The process involved a lot of testing because the LED strip had to be wired corr
 The final documentation shows the project as both an object and a process. The photos show the build, materials, and details, while the video shows the actual gesture happening through light, interaction, and movement.</p>
           </div>
 
-          <div class="assignment-media-grid stagger-wrap">
+          <div class="assignment-media-grid">
             <article class="assignment-media-card reveal delay-1">
               <div class="assignment-media">
                 <span class="media-label">Photo 1</span>
@@ -837,7 +774,7 @@ I’ll basically say that this piece is about turning a handmade electronic obje
             <div class="eyebrow">Final Project Documentation</div>
             <h2 class="section-title">Final <span>Project</span></h2>
 
-            <p class="placeholder-note">For the final project, I’ll basically say that this section brings the proposal, documentation, and video into one place. The proposal PDF shows the planning side of the work, while the video shows how the project actually exists through movement, testing, interaction, and presentation. This makes the final project section work like both an archive and a final documentation space, where the idea, process, and final outcome can all be seen together.</p>
+            <p class="placeholder-note">For the final project, I’ll basically say that this section brings the proposal, documentation, photo, and video into one place. The proposal PDF shows the planning side of the work, while the photo and video show how the project actually exists through its physical form, movement, testing, interaction, and presentation. This makes the final project section work like both an archive and a final documentation space, where the idea, process, and final outcome can all be seen together.</p>
 
             <div class="back-row">
               <a class="btn" href="images/final-project-proposal.pdf" download>Download Proposal PDF</a>
@@ -845,7 +782,7 @@ I’ll basically say that this piece is about turning a handmade electronic obje
             </div>
           </div>
 
-          <div class="assignment-media-grid stagger-wrap">
+          <div class="assignment-media-grid">
             <article class="assignment-media-card reveal delay-1">
               <div class="assignment-media">
                 <span class="media-label">Final Video</span>
@@ -867,6 +804,21 @@ I’ll basically say that this piece is about turning a handmade electronic obje
               <div class="assignment-media-info">
                 <h3>Final Project Video</h3>
                 <p>This video documents the final project in motion, showing the work as something that happens through time instead of only being seen as a still object. The video helps show the interaction, lighting, movement, and overall process of the final build, while also connecting back to the proposal and the original idea behind the project.</p>
+              </div>
+            </article>
+
+            <article class="assignment-media-card reveal delay-2">
+              <div class="assignment-media">
+                <span class="media-label">Final Photo</span>
+
+                <img src="images/final-project-photo.jpg" alt="Final Project photo documentation" />
+
+                <p>Drop final-project-photo.jpg into images/</p>
+              </div>
+
+              <div class="assignment-media-info">
+                <h3>Final Project Photo</h3>
+                <p>This photo documents the final project as a finished object, showing the build, materials, and visual setup in a still image. While the video shows how the project moves and changes over time, this photo helps show the physical details of the final piece and how it looks when presented.</p>
               </div>
             </article>
           </div>
@@ -905,8 +857,10 @@ I’ll basically say that this piece is about turning a handmade electronic obje
       elements.forEach((el) => observer.observe(el));
     }
 
-    observeWithClass(".reveal-on-scroll", "active", { threshold: 0.15 });
-    observeWithClass(".scroll-section", "in-view", { threshold: 0.18, rootMargin: "-8% 0px -8% 0px" });
+    observeWithClass(".scroll-section", "in-view", {
+      threshold: 0.18,
+      rootMargin: "-8% 0px -8% 0px"
+    });
 
     document.querySelectorAll(".glass-card, .assignment-media-card").forEach((card) => {
       card.addEventListener("mousemove", (e) => {
@@ -962,7 +916,7 @@ I’ll basically say that this piece is about turning a handmade electronic obje
       });
     }
 
-    const hoverTargets = document.querySelectorAll("a, button, input, textarea, iframe, model-viewer, video, .page-switcher a, .assignment-media-card, .glass-card, .logo-badge");
+    const hoverTargets = document.querySelectorAll("a, button, input, textarea, iframe, video, .page-switcher a, .assignment-media-card, .glass-card, .logo-badge");
 
     hoverTargets.forEach((element) => {
       element.addEventListener("mouseenter", () => {
